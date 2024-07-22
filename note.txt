@@ -1,0 +1,10 @@
+// ANCHOR - RUN MYSQL CONTAINER DOCKER
+
+docker run --name mysql_container \
+-e MYSQL_ROOT_PASSWORD=122334 \
+-e MYSQL_DATABASE=td_db \
+-p 3307:3306 \
+-d mysql:5.7.37
+
+// ANCHOR - mysql connect port
+mysql --host=127.0.0.1 --user=root --password --port=3307
